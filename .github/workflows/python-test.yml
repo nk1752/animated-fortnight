@@ -28,6 +28,6 @@ jobs:
 
     - name: Run script with 2 numbers input and print result
       run: |
-        result=$(python add_two_numbers.py 2 3)
+        result=$(python ${{ GITHUB.WORKSPACE }}/add_two_numbers.py 2 3)
         echo "Result: $result"
 
