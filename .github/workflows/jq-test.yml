@@ -1,0 +1,22 @@
+name: jq-tset
+
+on:
+  push:
+    branches:
+      - main
+  
+
+jobs:
+  simple_test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4.2.0
+
+    - name: jq null tset
+      id: jq_script
+      run: |
+        result=$(jq -r .RegionsBank config.json)
+        echo "Result: $result"
+      
