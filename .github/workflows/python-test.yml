@@ -32,7 +32,7 @@ jobs:
         num2: 3
         sum:
       run: |
-        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/add_two_numbers.py)
+        result=$(python add_two_numbers.py)
         echo "Result: $result"
         echo "sum: $sum"
 
