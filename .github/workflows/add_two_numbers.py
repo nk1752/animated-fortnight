@@ -1,4 +1,4 @@
-import sys
+# This is a simple python script that adds two numbers and returns the sum.
 import os
 
 def add_two_numbers()->int:
