@@ -17,6 +17,10 @@ jobs:
     - name: jq null tset
       id: jq_script
       run: |
-        result=$(jq -r .RegionsBank config.json)
-        echo "Result: $result"
+        result=$(jq -r .RegionsBank1 config.json)
+        if [[ "$result" == null ]]; then
+          echo "Result is null"
+        else
+          echo "Result is not null"
+        fi
       
