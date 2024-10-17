@@ -27,10 +27,14 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run script with 2 numbers input and print result
+      id: python_script
       run: |
-        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/main.py)
-        echo "Result: $result"
+        python ${{ GITHUB.WORKSPACE }}/scripts/main.py
       env:
         num1: 2
         num2: 3
+
+    - name: display python script output
+      run: |
+        echo "Result: ${{ steps.python_script.outputs.result }}"
 

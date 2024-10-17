@@ -5,13 +5,14 @@ def main():
   num1 = os.getenv('num1')
   num2 = os.getenv('num2')
   
-  print(f"Parameter 1: {num1}")
-  print(f"Parameter 2: {num2}")
+  print(f"num 1: {num1}")
+  print(f"num2 2: {num2}")
 
   sum = int(num1) + int(num2)
   print(f"Sum: {sum}")
 
-  return sum
+  with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
+    print(f"result={sum}", file=fh)
 
 if __name__ == '__main__':
     main()
