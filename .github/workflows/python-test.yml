@@ -26,7 +26,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run tests
+    - name: Run script with 2 numbers input and print result
       run: |
-        python -V
-        pip freeze
+        result=$(python add_two_numbers.py 2 3)
+        echo "Result: $result"
+
