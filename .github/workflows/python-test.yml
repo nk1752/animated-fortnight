@@ -27,7 +27,10 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run script with 2 numbers input and print result
+      env:
+        num1: 2
+        num2: 3
       run: |
-        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/add_two_numbers.py 2 3)
+        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/add_two_numbers.py)
         echo "Result: $result"
 
