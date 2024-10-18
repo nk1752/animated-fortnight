@@ -47,3 +47,12 @@ jobs:
       run: |
         echo "Result: ${{ steps.display_json.outputs.result }}"
 
+    - name: OpenWeatherMap API test
+      id: openweathermap_api
+      run: |
+        python ${{ GITHUB.WORKSPACE }}/scripts/weather.py
+      env:
+        API_KEY: '174b78740cec804ffe3104c21c411a5c'
+        CITY: 'Birmingham'
+        COUNTRY: 'US'
+
