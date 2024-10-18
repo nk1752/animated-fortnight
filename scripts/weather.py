@@ -5,7 +5,7 @@ def weather():
   city = os.getenv('CITY')
   print(f"city: {city}")
 
-  API_key = os.getenv('API_kEY')
+  API_key = os.getenv('API_KEY')
   print(f"API_key: {API_key}")
 
   url = 'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}'
