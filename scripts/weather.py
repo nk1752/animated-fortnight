@@ -10,7 +10,8 @@ def weather():
   API_key = os.getenv('API_KEY')
   print(f"API_key: {API_key}")
 
-  url = 'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}'
+  #url = 'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}'
+  url = 'https://google.com'
   response = requests.get(url)
   data = response.json()
   print(f"weather: {data}")
