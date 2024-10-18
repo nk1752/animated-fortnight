@@ -2,6 +2,8 @@ import os
 import requests
 
 def weather():
+  print("weather function")
+  
   city = os.getenv('CITY')
   print(f"city: {city}")
 
