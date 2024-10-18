@@ -52,7 +52,7 @@ jobs:
       run: |
         python ${{ GITHUB.WORKSPACE }}/scripts/weather.py
       env:
-        API_KEY: '174b78740cec804ffe3104c21c411a5c'
+        API_KEY: '6e60e059d23d74e25360f4c7c4b9e895'
         CITY: 'Birmingham'
         COUNTRY: 'US'
 
