@@ -8,7 +8,7 @@ def display_json():
     config_dict = json.load(fh)
 
   # print config.json
-  print(f"config: {config_dict}")
+  print(f"config: {config_dict}", dafault_flow_style=False)
 
   with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
     print(f"result={config_dict['RegionsBank']['DEV']}", file=fh)
