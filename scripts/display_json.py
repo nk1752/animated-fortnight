@@ -1,5 +1,6 @@
 import os
 import json
+import pprint
 
 def display_json():
 
@@ -8,7 +9,10 @@ def display_json():
     config_dict = json.load(fh)
 
   # print config.json
-  print(f"config: {config_dict}", dafault_flow_style=False)
+  print(f"config: {config_dict}")
+
+  # Pretty print the dictionary
+  pprint.pprint(config_dict, indent=4) 
 
   with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
     print(f"result={config_dict['RegionsBank']['DEV']}", file=fh)
