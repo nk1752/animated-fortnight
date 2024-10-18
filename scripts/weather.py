@@ -13,8 +13,8 @@ def weather():
   #url = 'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}'
   url = 'https://google.com'
   response = requests.get(url)
-  data = response.json()
-  print(f"weather: {data}")
+  if response.status_code == 200:
+    print("Success")
 
 
   # with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
