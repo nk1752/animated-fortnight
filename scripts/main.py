@@ -6,7 +6,7 @@ def main():
   num2 = os.getenv('num2')
   
   print(f"num 1: {num1}")
-  print(f"num2 2: {num2}")
+  print(f"num 2: {num2}")
 
   sum = int(num1) + int(num2)
   print(f"Sum: {sum}")

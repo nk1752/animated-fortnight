@@ -38,3 +38,11 @@ jobs:
       run: |
         echo "Result: ${{ steps.python_script.outputs.result }}"
 
+    # Display the JSON file
+    - name: run display_json.py script
+      id: display_json
+      env:
+        JSON_FILE: ${{ GITHUB.WORKSPACE }}/config.yaml
+      run: |
+        python ${{ GITHUB.WORKSPACE }}/scripts/display_json.py
+
