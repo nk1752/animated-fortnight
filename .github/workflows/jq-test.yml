@@ -1,9 +1,8 @@
 name: jq-tset
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  
   
 
 jobs:

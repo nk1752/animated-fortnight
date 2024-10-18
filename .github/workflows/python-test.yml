@@ -4,10 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-
+  
 jobs:
   simple_test:
     runs-on: ubuntu-latest
@@ -45,4 +42,8 @@ jobs:
         JSON_FILE: ${{ GITHUB.WORKSPACE }}/config.yaml
       run: |
         python ${{ GITHUB.WORKSPACE }}/scripts/display_json.py
+        
+    - name: display json script output
+      run: |
+        echo "Result: ${{ steps.display_json.outputs.result }}"
 
