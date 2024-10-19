@@ -29,7 +29,7 @@ def postman() -> int:
 
         # print all keys and values
         for key, value in config_dict.items():
-            print(key, value)
+            print(key, value["DEV"])
 
         # print RegionsBank DEV value
         env_id = config_dict['RegionsBank']['DEV']
