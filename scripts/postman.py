@@ -12,18 +12,14 @@ def postman() -> int:
     if response.status_code == 200:
         print("Success")
 
-        print(f"Response: {response}")
-
         data_json = response.json()
-        print(data_json)
-
         data_dict = json.loads(data_json)
         print(data_dict)
 
     else:
         print("Failed")
 
-    with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
+    with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
         print(f"statis_code={response.status_code}", file=fh)
 
 
