@@ -33,15 +33,15 @@ def postman() -> int:
 
         # print RegionsBank DEV value
         env_id = config_dict['RegionsBank']['DEV']
-        print(env_id)
-
-
+        print(f"env_id -> {env_id}")
         
     else:
         print("Failed")
 
     with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
         print(f"status_code={response.status_code}", file=fh)
+    with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
+        print(f"env_id={env_id}", file=fh)
 
     return response.status_code
 

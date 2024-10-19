@@ -56,3 +56,4 @@ jobs:
       - name: display postman script output status code
         run: |
           echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
+          echo "env_id: ${{ steps.postman_echo_api.outputs.env_id }}"
