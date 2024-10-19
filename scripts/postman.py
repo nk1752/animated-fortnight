@@ -25,9 +25,9 @@ def postman() -> int:
         print(json.dumps(response_dict, indent=4))
 
         # args is a dictionary
-        args = response_dict.args
+        args = response_dict["args"]
         print("args:")
-        print(json.dumps(args, indent=4))
+        print(json.dumps(response_dict["args"]["foo2"]))
 
         # headers is a dictionary
         headers = response_dict["headers"]
