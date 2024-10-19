@@ -25,7 +25,7 @@ def postman() -> int:
         print(json.dumps(response_dict, indent=4))
 
         # args is a dictionary
-        args = response_dict["args"]
+        args = response_dict.args
         print("args:")
         print(json.dumps(args, indent=4))
 
@@ -41,7 +41,6 @@ def postman() -> int:
         print(f"status_code={response.status_code}", file=fh)
 
     return response.status_code
-
 
 if __name__ == "__main__":
     postman()

@@ -4,57 +4,55 @@ on:
   push:
     branches:
       - main
-  
+
 jobs:
   python_test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4.2.0
+      - name: Checkout code
+        uses: actions/checkout@v4.2.0
 
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v5.2.0
-      with:
-        python-version: '3.10'
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5.2.0
+        with:
+          python-version: "3.10"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Run script with 2 numbers input and print result
-      id: python_script
-      run: |
-        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/main.py)
-        echo "result -> $result"
-      env:
-        num1: 2
-        num2: 3
+      - name: Run script with 2 numbers input and print result
+        id: python_script
+        run: |
+          result=$(python ${{ GITHUB.WORKSPACE }}/scripts/main.py)
+          echo "result -> $result"
+        env:
+          num1: 2
+          num2: 3
 
-    - name: display python script output
-      run: |
-        echo "Result: ${{ steps.python_script.outputs.result }}"
+      - name: display python script output
+        run: |
+          echo "Result: ${{ steps.python_script.outputs.result }}"
 
-    # Display the JSON file
-    - name: run display_json.py script
-      id: display_json
-      env:
-        JSON_FILE: ${{ GITHUB.WORKSPACE }}/config.yaml
-      run: |
-        python ${{ GITHUB.WORKSPACE }}/scripts/display_json.py
-        
-    - name: display json script output
-      run: |
-        echo "Result: ${{ steps.display_json.outputs.result }}"
+      # Display the JSON file
+      - name: run display_json.py script
+        id: display_json
+        env:
+          JSON_FILE: ${{ GITHUB.WORKSPACE }}/config.yaml
+        run: |
+          python ${{ GITHUB.WORKSPACE }}/scripts/display_json.py
 
-    - name: Postman Echo API test
-      id: postman_echo_api
-      run: |
-        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/postman.py)
-        echo "result -> $result"
+      - name: display json script output
+        run: |
+          echo "Result: ${{ steps.display_json.outputs.result }}"
 
-    - name: display postman script output status code
-      run: |
-        echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
+      - name: Postman Echo API test
+        id: postman_echo_api
+        run: |
+          python ${{ GITHUB.WORKSPACE }}/scripts/postman.py
 
+      - name: display postman script output status code
+        run: |
+          echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
