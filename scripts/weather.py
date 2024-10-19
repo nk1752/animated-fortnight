@@ -10,12 +10,14 @@ def weather():
   API_key = os.getenv('API_KEY')
   print(f"API_key: {API_key}")
 
-  #url = 'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}'
-  url = 'https://google.com'
+  url = 'http://api.weatherapi.com/v1/current.json?key={API_key}&q={city}&aqi=yes'
+  #url = 'https://google.com'
   response = requests.get(url)
   if response.status_code == 200:
     print("Success")
-
+  else:
+    print("Failed")
+    
 
   # with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
   #   print(f"result=Weather in {city} is 75F", file=fh)
