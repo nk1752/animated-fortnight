@@ -48,12 +48,20 @@ jobs:
         run: |
           echo "Result: ${{ steps.display_json.outputs.result }}"
 
+        # postman echo api test
       - name: Postman Echo API test
         id: postman_echo_api
         run: |
           python ${{ GITHUB.WORKSPACE }}/scripts/postman.py
-
       - name: display postman script output status code
         run: |
           echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
-          echo "env_id: ${{ steps.postman_echo_api.outputs.env_id }}"
+
+        # business group process config
+      - name: process config.json file
+        id: process_config
+        run: |
+          python ${{ GITHUB.WORKSPACE }}/scripts/bg.py
+      - name: display process config script output
+        run: |
+          echo "env_id: ${{ steps.process_config.outputs.env_id }}"
