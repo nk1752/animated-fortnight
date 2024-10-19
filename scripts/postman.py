@@ -27,6 +27,10 @@ def postman() -> int:
         # Print the dictionary
         print(config_dict)
 
+        # print all keys and values
+        for key, value in config_dict.items():
+            print(key, value)
+
 
         
     else:
