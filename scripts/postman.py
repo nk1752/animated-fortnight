@@ -2,6 +2,14 @@ import os
 import requests
 import json
 
+"""
+json.dumps(): Serializes to a JSON string.
+json.dump(): Serializes to a file or file-like object.
+json.loads(): Deserializes from a JSON string.
+json.load(): Deserializes from a file or file-like object.
+
+"""
+
 
 def postman() -> int:
     print("Postman Echo function")
@@ -12,10 +20,11 @@ def postman() -> int:
     if response.status_code == 200:
         print("Success")
 
-        # convert response to dictionary
-        response_dict = json.loads(response.json)
-        # print the response dictionary
-        print(response_dict)
+        json_content = response.json()
+        print(json.dumps(json_content, indent=4))
+
+        args = json_content["args"]
+        print(json.dumps(args, indent=4))
 
     else:
         print("Failed")
