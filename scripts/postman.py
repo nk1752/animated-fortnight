@@ -3,7 +3,7 @@ import requests
 import json
 
 
-def postman():
+def postman() -> int:
     print("Postman Echo function")
 
     url = "https://postman-echo.com/get?foo1=bar1&foo2=bar2"
@@ -23,8 +23,8 @@ def postman():
     else:
         print("Failed")
 
-    # with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
-    #   print(f"result=Weather in {city} is 75F", file=fh)
+    with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
+        print(f"statis_code={response.status_code}", file=fh)
 
 
 if __name__ == "__main__":

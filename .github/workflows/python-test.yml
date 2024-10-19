@@ -47,17 +47,12 @@ jobs:
       run: |
         echo "Result: ${{ steps.display_json.outputs.result }}"
 
-    - name: OpenWeatherMap API test
-      id: openweathermap_api
-      run: |
-        python ${{ GITHUB.WORKSPACE }}/scripts/weather.py
-      env:
-        API_KEY: ef50495ff7bd48708b0142219232003
-        CITY: 'Birmingham'
-        COUNTRY: 'US'
-
     - name: Postman Echo API test
       id: postman_echo_api
       run: |
         python ${{ GITHUB.WORKSPACE }}/scripts/postman.py
+
+    - name: display postman script output status code
+      run: |
+        echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
 
