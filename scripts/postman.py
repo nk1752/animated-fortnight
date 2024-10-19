@@ -6,7 +6,7 @@ import json
 def postman() -> int:
     print("Postman Echo function")
 
-    url = "https://postman-echo.com/get?foo1=bar1&foo2=bar2"
+    url = "https://postman-echo.com/get?foo2=bar2&foo5=bar5"
     response = requests.get(url)
 
     if response.status_code == 200:
@@ -20,6 +20,8 @@ def postman() -> int:
 
     with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
         print(f"statis_code={response.status_code}", file=fh)
+
+    return response.status_code
 
 
 if __name__ == "__main__":
