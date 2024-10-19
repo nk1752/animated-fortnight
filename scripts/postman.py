@@ -12,9 +12,8 @@ def postman() -> int:
     if response.status_code == 200:
         print("Success")
 
-        data_json = response.json()
-        data_dict = json.loads(data_json)
-        print(data_dict)
+        # print respone
+        print(json.dumps(response.json(), indent=4))
 
     else:
         print("Failed")

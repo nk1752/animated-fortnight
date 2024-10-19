@@ -6,7 +6,7 @@ on:
       - main
   
 jobs:
-  simple_test:
+  python_test:
     runs-on: ubuntu-latest
 
     steps:
