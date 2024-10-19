@@ -26,7 +26,8 @@ jobs:
     - name: Run script with 2 numbers input and print result
       id: python_script
       run: |
-        python ${{ GITHUB.WORKSPACE }}/scripts/main.py
+        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/main.py)
+        echo "result -> $result"
       env:
         num1: 2
         num2: 3
