@@ -51,7 +51,8 @@ jobs:
     - name: Postman Echo API test
       id: postman_echo_api
       run: |
-        python ${{ GITHUB.WORKSPACE }}/scripts/postman.py
+        result=$(python ${{ GITHUB.WORKSPACE }}/scripts/postman.py)
+        echo "result -> $result"
 
     - name: display postman script output status code
       run: |
