@@ -20,20 +20,15 @@ def postman() -> int:
     if response.status_code == 200:
         print("Success")
 
-        # json_content is a dictionary
-        response_dict = response.json()
-        print(json.dumps(response_dict, indent=4))
+        # Open the JSON file and load it into a Python dictionary
+        with open('config.json', 'r') as file:
+            config_dict = json.load(file)
 
-        # args is a dictionary
-        args = response_dict["args"]
-        print("args:")
-        print(json.dumps(response_dict["args"]["foo2"]))
+        # Print the dictionary
+        print(config_dict)
 
-        # headers is a dictionary
-        headers = response_dict["headers"]
-        print("headers:")
-        print(json.dumps(headers, indent=4))
 
+        
     else:
         print("Failed")
 
