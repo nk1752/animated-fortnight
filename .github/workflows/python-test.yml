@@ -56,3 +56,8 @@ jobs:
         CITY: 'Birmingham'
         COUNTRY: 'US'
 
+    - name: Postman Echo API test
+      id: postman_echo_api
+      run: |
+        python ${{ GITHUB.WORKSPACE }}/scripts/postman.py
+
