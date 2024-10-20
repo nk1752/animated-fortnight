@@ -3,7 +3,7 @@ import json
 import yaml
 
 
-def bg_json(bg):
+def bg_json(bg: str) -> str:
     print("bg json function")
 
     print(f"bg -> {bg}")
@@ -22,6 +22,7 @@ def bg_json(bg):
         if key == bg:
             env_id = value['DEV']
             break
+    return env_id
         
 def bg_json(bg):
     print("bg json function")
