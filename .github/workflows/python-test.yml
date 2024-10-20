@@ -49,7 +49,7 @@ jobs:
           BG: "BP"
         id: bg
         run: |
-          python ${{ GITHUB.WORKSPACE }}/scripts/bg.py
+          python ${{ GITHUB.WORKSPACE }}/scripts/main.py
           
 
         # business group process config with json file
