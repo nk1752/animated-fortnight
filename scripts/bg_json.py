@@ -18,7 +18,7 @@ def bg_json() -> int:
 
     print(f'print all keys and values')
     for key, value in config_dict.items():
-        if key == "{bg}":
+        if key == {bg}:
             print(key, value["DEV"])
             env_id = value["DEV"]
             break
