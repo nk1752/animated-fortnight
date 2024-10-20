@@ -47,7 +47,7 @@ jobs:
         # business group process config with json file
       - name: -3- process config.json file
         env:
-          bg: "RegionsBank"
+          BG: "RegionsBank"
         id: process_json
         run: |
           python ${{ GITHUB.WORKSPACE }}/scripts/bg_json.py
