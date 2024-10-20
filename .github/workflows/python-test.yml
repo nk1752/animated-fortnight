@@ -36,22 +36,22 @@ jobs:
           echo "Result: ${{ steps.python_script.outputs.result }}"
 
         # postman echo api test
-      - name: Postman Echo API test
+      - name: -2- Postman Echo API test
         id: postman_echo_api
         run: |
           python ${{ GITHUB.WORKSPACE }}/scripts/postman.py
-      - name: display postman script output status code
+      - name: -2- output status code
         run: |
           echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
 
         # business group process config with json file
-      - name: process config.json file
+      - name: -3- process config.json file
         env:
           bg: "RegionsBank"
         id: process_json
         run: |
           python ${{ GITHUB.WORKSPACE }}/scripts/bg_json.py
-      - name: display process config script output
+      - name: -3- output
         run: |
           echo "env_id: ${{ steps.process_json.outputs.env_id }}"
 
