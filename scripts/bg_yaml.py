@@ -1,8 +1,8 @@
 import os
 import json
 
-def bg() -> int:
-    print("bg function")
+def bg_yaml() -> int:
+    print("bg yaml function")
 
     # Open the JSON file and load it into a Python dictionary
     with open('config.json', 'r') as file:
@@ -25,4 +25,4 @@ def bg() -> int:
         print(f"env_id={env_id}", file=fh)
 
 if __name__ == '__main__':
-    bg()
+    bg_yaml()

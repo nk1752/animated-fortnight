@@ -1,45 +1,21 @@
-server:
-  host: localhost
-  port: 8080
-
-database:
-  type: postgres
-  host: localhost
-  port: 5432
-  org_id: 443058038540584
-  env_id: 832845738457834
-  name: mydatabase
-
-business_group:
-  RegionsBank:
-    - org_id: 443058038542212
-      env_id: 832845738452234
-      DEV:
-        - org_id: 443058038542212
-          env_id: 832845738452234
-          name: mydatabase
-      QA:
-        - org_id: 443058038542212
-          env_id: 832845738452234
-          name: mydatabase
-      name: mydatabase
-  BankOfAmerica:
-    - org_id: 443058038541156
-      env_id: 832845738451134
-      name: mydatabase
-  BP:
-    - org_id: 443058038542212
-      env_id: 832845738452234
-      name: mydatabase
-  Sales_and_Services:
-    - org_id: 443058038541156
-      env_id: 832845738451134
-      name: mydatabase
-
-logging:
-  level: INFO
-  file: /var/log/myapp.log
-
-features:
-  enable_feature_x: true
-  enable_feature_y: false
+---
+RegionsBank:
+  DEV: '2973479792301'
+  QA: '2973479792302'
+  PROD: '2973479792303'
+  orgId: '2973479792304'
+BP:
+  DEV: '2973479792305'
+  QA: '2973479792306'
+  PROD: '2973479792307'
+  orgId: '2973479792308'
+Sales:
+  DEV: '2973479792309'
+  QA: '2973479792310'
+  PROD: '2973479792311'
+  orgId: '2973479792312'
+Sales_and_Services:
+  DEV: '2973479792313'
+  QA: '2973479792314'
+  PROD: '2973479792315'
+  orgId: '2973479792316'

@@ -59,18 +59,20 @@ jobs:
 
         # business group process config with json file
       - name: process config.json file
+        env:
+          bg: "RegionsBank"
         id: process_json
         run: |
-          python ${{ GITHUB.WORKSPACE }}/scripts/bg.py
+          python ${{ GITHUB.WORKSPACE }}/scripts/bg_json.py
       - name: display process config script output
         run: |
           echo "env_id: ${{ steps.process_json.outputs.env_id }}"
 
       # business group process config with json file
-      - name: process config.json file
-        id: process_yaml
-        run: |
-          python ${{ GITHUB.WORKSPACE }}/scripts/display_yaml.py
-      - name: display process config script output
-        run: |
-          echo "env_id: ${{ steps.process_yaml.outputs.env_id }}"
+      # - name: process config.json file
+      #   id: process_yaml
+      #   run: |
+      #     python ${{ GITHUB.WORKSPACE }}/scripts/bg_yaml.py
+      # - name: display process config script output
+      #   run: |
+      #     echo "env_id: ${{ steps.process_yaml.outputs.env_id }}"
