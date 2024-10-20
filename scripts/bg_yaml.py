@@ -8,9 +8,10 @@ def bg_json() -> int:
     bg = os.getenv("BG")
     print(f"bg -> {bg}")
 
-    # Open the JSON file and load it into a Python dictionary
-    with open('config.json', 'r') as file:
-        config_dict = yaml.load(file)
+    # Open the YAML file and load it into a Python dictionary
+    with open('config.yaml', 'r') as file:
+        config_dict = yaml.load(file, Loader=yaml.FullLoader)
+    
 
     print('key, value pairs of dictionary')
     for key, value in config_dict.items():
