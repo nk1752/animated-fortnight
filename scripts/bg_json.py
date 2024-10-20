@@ -13,14 +13,14 @@ def bg_json() -> int:
         config_dict = json.load(file)
 
     # Print the dictionary
-    print(config_dict)
+    #print(config_dict)
 
     # print all keys and values
     for key, value in config_dict.items():
         print(key, value["DEV"])
 
     # print RegionsBank DEV value
-    env_id = config_dict[{bg}]['DEV']
+    env_id = config_dict['{bg}']['DEV']
     print(f"env_id -> {env_id}")
     
     # step values
