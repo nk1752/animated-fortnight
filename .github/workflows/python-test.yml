@@ -45,21 +45,23 @@ jobs:
           echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
 
         # business group process config with json file
-      - name: -3- process config.json file
-        env:
-          BG: "RegionsBank"
-        id: process_json
-        run: |
-          python ${{ GITHUB.WORKSPACE }}/scripts/bg_json.py
-      - name: -3- output
-        run: |
-          echo "env_id: ${{ steps.process_json.outputs.env_id }}"
+      # - name: -3- process config.json file
+      #   env:
+      #     BG: "RegionsBank"
+      #   id: process_json
+      #   run: |
+      #     python ${{ GITHUB.WORKSPACE }}/scripts/bg_json.py
+      # - name: -3- output
+      #   run: |
+      #     echo "env_id: ${{ steps.process_json.outputs.env_id }}"
 
       # business group process config with json file
-      # - name: process config.json file
-      #   id: process_yaml
-      #   run: |
-      #     python ${{ GITHUB.WORKSPACE }}/scripts/bg_yaml.py
-      # - name: display process config script output
-      #   run: |
-      #     echo "env_id: ${{ steps.process_yaml.outputs.env_id }}"
+      - name: process config.json file
+        env:
+          BG: "RegionsBank"
+        id: process_yaml
+        run: |
+          python ${{ GITHUB.WORKSPACE }}/scripts/bg_yaml.py
+      - name: display process config script output
+        run: |
+          echo "env_id: ${{ steps.process_yaml.outputs.env_id }}"
