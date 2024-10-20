@@ -6,7 +6,9 @@ from bg_module import bg_json
 
 bg = os.getenv("BG")
 
-bg_json(bg)
+env_id = bg_json(bg)
+
+print(f"{bg} env_id: {env_id}")
 
 if __name__ == '__main__':
   bg()
