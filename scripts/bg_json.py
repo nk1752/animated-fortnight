@@ -17,11 +17,9 @@ def bg_json() -> int:
 
     # print all keys and values
     for key, value in config_dict.items():
-        print(key, value["DEV"])
-
-    # print RegionsBank DEV value
-    env_id = config_dict['RegionsBank']['DEV']
-    print(f"env_id -> {env_id}")
+        if key == "{bg}":
+            print(key, value["DEV"])
+            env_id = value["DEV"]
     
     # step values
     with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
