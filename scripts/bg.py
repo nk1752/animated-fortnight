@@ -4,7 +4,12 @@ import os
 import bg_json
 import bg_yaml
 
-bg = os.getenv("BG")
+def bg():
+  bg = os.getenv("BG")
 
-bg_json(bg)
-bg_yaml(bg)
+  bg_json(bg)
+  bg_yaml(bg)
+
+if __name__ == '__main__':
+  bg()
+

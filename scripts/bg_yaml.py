@@ -27,5 +27,3 @@ def bg_json(bg) -> int:
     with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
         print(f"env_id={env_id}", file=fh)
 
-if __name__ == '__main__':
-    bg_json()
