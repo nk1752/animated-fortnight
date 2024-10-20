@@ -12,17 +12,20 @@ def bg_json() -> int:
     with open('config.json', 'r') as file:
         config_dict = json.load(file)
 
-    # Print the dictionary
-    #print(config_dict)
+    print('key, value pairs of dictionary')
+    for key, value in config_dict.items():
+        print(f'key: {key} --> value: {value}')
 
-    # print all keys and values
+    print(f'print all keys and values')
     for key, value in config_dict.items():
         if key == "{bg}":
             print(key, value["DEV"])
             env_id = value["DEV"]
             break
+        else:
+            print(f"key {key} not found")
     
-    # step values
+    print(f'step values')
     with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
         print(f"env_id={env_id}", file=fh)
 
