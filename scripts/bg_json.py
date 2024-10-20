@@ -20,6 +20,7 @@ def bg_json() -> int:
         if key == "{bg}":
             print(key, value["DEV"])
             env_id = value["DEV"]
+            break
     
     # step values
     with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
