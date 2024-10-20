@@ -57,11 +57,20 @@ jobs:
         run: |
           echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
 
-        # business group process config
+        # business group process config with json file
       - name: process config.json file
-        id: process_config
+        id: process_json
         run: |
           python ${{ GITHUB.WORKSPACE }}/scripts/bg.py
       - name: display process config script output
         run: |
-          echo "env_id: ${{ steps.process_config.outputs.env_id }}"
+          echo "env_id: ${{ steps.process_json.outputs.env_id }}"
+
+      # business group process config with json file
+      - name: process config.json file
+        id: process_yaml
+        run: |
+          python ${{ GITHUB.WORKSPACE }}/scripts/display_yaml.py
+      - name: display process config script output
+        run: |
+          echo "env_id: ${{ steps.process_yaml.outputs.env_id }}"
