@@ -1,15 +1,14 @@
 import os
 import yaml
 
-def mul_two():
-  num1 = os.getenv('num1')
-  num2 = os.getenv('num2')
+def display_yaml():
+  # load config.yaml
+  with open('config.yaml') as fh:
+    config_dict = yaml.load(fh, Loader=yaml.FullLoader)
+
+  # print config.yaml
+  print(f"config: {config_dict}")
+
   
-  print(f"num 1: {num1}")
-  print(f"num 2: {num2}")
-
-  mul = int(num1) * int(num2)
-  print(f"Mul: {mul}")
-
-  with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
-    print(f"result={mul}", file=fh)
+if __name__ == '__main__':
+    display_yaml()

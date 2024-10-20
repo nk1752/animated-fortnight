@@ -19,6 +19,11 @@ def postman() -> int:
 
     if response.status_code == 200:
         print("Success")    
+    else:
+        print("Failed")
+
+    with open(os.getenv('GITHUB_OUTPUT'), 'a') as fh:
+        print(f"status_code={response.status_code}", file=fh)
 
     return response.status_code
 
