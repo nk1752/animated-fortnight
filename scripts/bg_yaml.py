@@ -1,11 +1,9 @@
 import os
 import yaml
 
-def bg_json() -> int:
+def bg_json(bg) -> int:
     print("bg json function")
 
-    # get bg value from env
-    bg = os.getenv("BG")
     print(f"bg -> {bg}")
 
     # Open the YAML file and load it into a Python dictionary
