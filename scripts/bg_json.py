@@ -20,7 +20,7 @@ def bg_json() -> int:
         print(key, value["DEV"])
 
     # print RegionsBank DEV value
-    env_id = config_dict['{bg}']['DEV']
+    env_id = config_dict['RegionsBank']['DEV']
     print(f"env_id -> {env_id}")
     
     # step values
