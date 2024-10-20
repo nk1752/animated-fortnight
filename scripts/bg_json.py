@@ -16,14 +16,13 @@ def bg_json() -> int:
     for key, value in config_dict.items():
         print(f'key: {key} --> value: {value}')
 
-    print(f'print all keys and values')
+    print(f'find bg value in dictionary & get env_id from DEV')
+    env_id = None
     for key, value in config_dict.items():
-        if key == {bg}:
-            print(key, value["DEV"])
-            env_id = value["DEV"]
+        if key == bg:
+            env_id = value['DEV']
             break
-        else:
-            print(f"key {key} not found")
+    
     
     print(f'step values')
     with open(os.getenv("GITHUB_OUTPUT"), "a") as fh:
