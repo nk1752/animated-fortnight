@@ -2,7 +2,10 @@ import os
 import json
 from datetime import datetime, timedelta
 
-def load_dict(bg_name):
+def load_dict(bg_name) -> dict:
+
+  print("Loading dictionary...")
+  print(f"BG_NAME: {bg_name}")
   # Load the dictionary from the file data.json
   with open('data.json', 'r') as file:
     data = json.load(file)
@@ -43,10 +46,7 @@ def load_dict(bg_name):
           "days_to_expiry": days_to_expiry
         })
 
-    # convert the fgw_dict to json
-    json_data = json.dumps(fgw_dict, indent=4)
-    print(json_data)
-      
+    return fgw_dict
 
-if __name__ == "__main__":
-  load_dict()
+   
+      
