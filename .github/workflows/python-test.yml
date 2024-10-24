@@ -23,53 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: -1- script with 2 numbers input and print result
+      - name: call main.py
         env:
-          num1: 2
-          num2: 3
-        id: python_script
-        run: |
-          result=$(python ${{ GITHUB.WORKSPACE }}/scripts/main.py)
-          echo "result -> $result"
-      - name: -1- output
-        run: |
-          echo "Result: ${{ steps.python_script.outputs.result }}"
-
-        # postman echo api test
-      - name: -2- Postman Echo API test
-        id: postman_echo_api
-        run: |
-          python ${{ GITHUB.WORKSPACE }}/scripts/postman.py
-      - name: -2- output status code
-        run: |
-          echo "Status Code: ${{ steps.postman_echo_api.outputs.status_code }}"
-
-      - name: -5- call bg for both json and yaml
-        env:
-          BG: "BP"
+          BG_NAME: "BP"
         id: bg
         run: |
           python ${{ GITHUB.WORKSPACE }}/scripts/main.py
-          
-
-        # business group process config with json file
-      # - name: -3- process config.json file
-      #   env:
-      #     BG: "BP"
-      #   id: process_json
-      #   run: |
-      #     python ${{ GITHUB.WORKSPACE }}/scripts/bg_json.py
-      # - name: -3- script output
-      #   run: |
-      #     echo "env_id: ${{ steps.process_json.outputs.env_id }}"
-
-      # business group process config with json file
-      # - name: -4- process config.yaml file
-      #   env:
-      #     BG: "RegionsBank"
-      #   id: process_yaml
-      #   run: |
-      #     python ${{ GITHUB.WORKSPACE }}/scripts/bg_yaml.py
-      # - name: -4- script output
-      #   run: |
-      #     echo "env_id: ${{ steps.process_yaml.outputs.env_id }}"
