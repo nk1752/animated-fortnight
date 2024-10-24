@@ -30,3 +30,7 @@ jobs:
         run: |
           python ${{ GITHUB.WORKSPACE }}/scripts/main.py
           ls -l
+
+      - name: Run tests
+        run: |
+          jq . output.json
