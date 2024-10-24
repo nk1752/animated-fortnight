@@ -15,6 +15,10 @@ def main():
   json_data = json.dumps(fgw_dict, indent=4)
   print(json_data)
 
+  # write the json data to a file
+  with open('output.json', 'w') as file:
+    file.write(json_data)
+
 if __name__ == '__main__':
     main()
   
