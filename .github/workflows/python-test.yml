@@ -31,6 +31,16 @@ jobs:
           python ${{ GITHUB.WORKSPACE }}/scripts/main.py
           ls -l
 
-      - name: Run tests
+      - name: process output.json
         run: |
+          # print the output.json file
           jq . output.json
+          # iterate output.json to extract all "fgw_name", "days_to_expiry" from list in key "dev_instances"
+          jq -r '.dev_instances[] | {fgw_name: .fgw_name, days_to_expiry: .days_to_expiry}' output.json
+
+          
+  
+
+
+
+
