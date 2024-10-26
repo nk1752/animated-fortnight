@@ -34,15 +34,19 @@ jobs:
       - name: process output.json
         run: |
           # print the output.json file
-          jq . output.json
+          #jq . output.json
 
-          for key in $(jq -r 'keys[]' output.json); do
-            echo "key: $key"
-            fgw_name=$(jq -r ".$key.fgw_name" output.json)
+          # Loop through each dev_instance entry in the JSON data
+          jq -c '.dev_instances[] | {fgw_name, days_to_expiry}' output.json | while read -r instance; do
+            # Extract "fgw_name" and "days_to_expiry" from each JSON object
+            fgw_name=$(echo "$instance" | jq -r '.fgw_name')
+            days_to_expiry=$(echo "$instance" | jq -r '.days_to_expiry')
+
+            # Process each entry (e.g., print or perform additional operations)
+            echo "Processing instance:"
             echo "fgw_name: $fgw_name"
-            days_to_expiry=$(jq -r ".$key.days_to_expiry" output.json)
             echo "days_to_expiry: $days_to_expiry"
-            
+            echo "------------------------"
           done
 
 
