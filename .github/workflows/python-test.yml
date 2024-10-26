@@ -42,10 +42,11 @@ jobs:
             fgw_name=$(echo "$instance" | jq -r '.fgw_name')
             days_to_expiry=$(echo "$instance" | jq -r '.days_to_expiry')
 
-            # Process each entry (e.g., print or perform additional operations)
-            echo "Processing instance:"
-            echo "fgw_name: $fgw_name"
-            echo "days_to_expiry: $days_to_expiry"
+            if [[ $days_to_expiry -lt 1000 ]]; then
+              echo "The FortiGate instance $fgw_name has less than 30 days to expiry"
+            else
+              echo "The FortiGate instance $fgw_name has more than 30 days to expiry"
+            fi
             echo "------------------------"
           done
 
