@@ -38,8 +38,11 @@ jobs:
 
           for key in $(jq -r 'keys[]' output.json); do
             echo "key: $key"
-            value=$(jq -r ".$key" output.json)
-            echo "value: $value"
+            fgw_name=$(jq -r ".$key.fgw_name" output.json)
+            echo "fgw_name: $fgw_name"
+            days_to_expiry=$(jq -r ".$key.days_to_expiry" output.json)
+            echo "days_to_expiry: $days_to_expiry"
+            
           done
 
 
