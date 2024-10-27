@@ -16,10 +16,11 @@ jobs:
       - name: Set up Python 3.10
         uses: actions/setup-python@v5.2.0
         with:
-          python-version: "3.10"
+          python-version: "^3.0.0"
 
       - name: Install dependencies
         run: |
+          python --version
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -36,8 +37,9 @@ jobs:
           # print the output.json file
           #jq . output.json
 
-          # Loop through each dev_instance entry in the JSON data using for loop
-          for instance in $(jq -c '.dev_instances[]' output.json); do
+          # Loop through each dev_instance entry in the JSON data
+          jq -c '.dev_instances[] | {fgw_name, days_to_expiry}' output.json | while read -r instance; do
+            
             # Extract "fgw_name" and "days_to_expiry" from each JSON object
             fgw_name=$(echo "$instance" | jq -r '.fgw_name')
             days_to_expiry=$(echo "$instance" | jq -r '.days_to_expiry')
@@ -49,4 +51,3 @@ jobs:
             fi
             echo "------------------------"
           done
-          
