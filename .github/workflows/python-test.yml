@@ -1,9 +1,7 @@
 name: python-test
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   python_test:

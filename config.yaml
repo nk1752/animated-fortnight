@@ -1,21 +1,19 @@
----
-RegionsBank:
-  DEV: '2973479792301'
-  QA: '2973479792302'
-  PROD: '2973479792303'
-  orgId: '2973479792304'
-BP:
-  DEV: '2973479792305'
-  QA: '2973479792306'
-  PROD: '2973479792307'
-  orgId: '2973479792308'
-Sales:
-  DEV: '2973479792309'
-  QA: '2973479792310'
-  PROD: '2973479792311'
-  orgId: '2973479792312'
-Sales_and_Services:
-  DEV: '2973479792313'
-  QA: '2973479792314'
-  PROD: '2973479792315'
-  orgId: '2973479792316'
+bg_name: test
+pem: "-----BEGIN RSA PRIVATE KEY-----\n        MIIEpAIBAAKCAQEArvKfnL7Z8OHBR5Q8WuzryR0v/jU96XurjDmI+8t5k2HrJ2bh\n\
+  \        pR0Ftj7QfQSh6jM7j1Jd2P+ckZwrOlX+n+dfY5LtAsxl/B68XqO7fOQSmgyM5ZG6\n    \
+  \    oeZMN6uDf9W+Q7MRv3xz5V38g4e8AfD4gqG0MZTjzMcM4QX+VgGyCGZGg6a/ubzM\n        OzDQykZ5GcQfjMbl3s0n1RjhZ06EOck8Jg7XtGyGDFNr5P0+F1YugHvZnRHnH+bX\n\
+  \        D5fvYbrCNABcH9uF9JD8cVxzOp7AS5QjD25TF1bd+2a5/r1ABfg7LvWmE7Cq+ydz\n    \
+  \    /5cNJIzGfW5mV0Zg4GCE/jkPbf2Ej1+ElUwFzQIDAQABAoIBAQC1Z9dFjTcPsuwB\n        mTPpFEk8ZyXl6RL0HL9fGjU3gR7EjVoLKr2lmcRJJzP8uUUpTtXG4PHktMdBc8p3\n\
+  \        ZXHxAcb1vHh+or+hw5uozr4Yg1k0LO7z9c4TFLmQjd2HlX8xI5C8qjEXQ5O4yOtI\n    \
+  \    YGYe67B7YZWW4Qqpb/QLx9omIf1kNC2UVTG+xO4F6CvOGHVWwVfHe1msPQzmQ/OJ\n        TCZn/R5+0L8q5mT6AflQaDBQUHkQFRLEVoNdJvNYTxIRksZjw0oX6doJTOzBgrH2\n\
+  \        zZzctLmb9J+TqFzFOdZ0Fz0vCKhZav/W2jDl5pWliVnl1ewzN7VtNu+lVu5Ki6Fb\n    \
+  \    Gtz+8F+ZAoGBANXbvZf82UyKDZ5g7TYmqPfEcQj7ZP2MS5sz9LRGVakv3Wn7PkiA\n        JqFJsjkZwl4eb5LHRz3ZRjk63O+y9lxhDW8+mV7Mjd8T7gKzgTZKtI4V3grweImH\n\
+  \        uZjpPM6PmOKUWEgtg+MKDfV4kwPGj96g9xtlv22PONP/BjEyifREU0oJAoGBAMCa\n    \
+  \    djSryalVfDsTLDPpGsTo0I8RaCm8VxNf5JRTa8FhzRd8Tk52v9OpJtrmk8KrzVjG\n        9a+nMFgDgFyjVR98l5sWEoeMvQf0aeMk5SHxOfOnaWqKrNpIZUExF4xGZLhsSH5c\n\
+  \        GgL+VxK5RMhS9l0iIscTCWUlq0e7HJOW2Psvk+g5AoGAYMQq7mMvPL4nlhZg8k6y\n    \
+  \    G+GVBft38g9WmftXCBm4RAw4kB4nh3QU2n2wVOnpFbCk8vM53UjJboCf5/DQEYmd\n        2lb3AKGAfd1Wi6XB+6FPdHNO92tr3kJf/23yqGHL5NkZ8dDQUhnSy+fs6PR9HrLu\n\
+  \        fqAZ/B2MPFtZ+5HAGDXxPxsCgYEAkgXlBbKvF0BXk8fpWx+q6i5NzDr97BpPe7MJ\n    \
+  \    dHXkW8NREhfwWaRFejvBDZrs8j+0VG4ZRbiH+OPiNr8yNHphdEp8lAfYqelx+8OM\n        oof8uK4EyUz8HSfGd9kmqDUMlzK6aG7NQEZFExx1T03MFLqK1OPWQGyoHLzxqWWP\n\
+  \        5giQ3i0CgYEAlv5M1CK8r8Qk9kNBgcbh+gH9FtFGQGh+dsMiqznRgw4FNQQ4UanB\n    \
+  \    8M/J7MTeu1a2+asb0nmANuh9SOT4VCM7yV4orNZ7ULX/WsbNHOfUthHGTXWB7Csm\n        mEEfuLniovU5AeHdjA0zMPlZFiL8CgrD4oA5jh6TAq5z5QixO4Aa6hI=\n\
+  \        -----END RSA PRIVATE KEY-----"

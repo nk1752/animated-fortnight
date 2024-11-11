@@ -1,0 +1,24 @@
+apiVersion: mulesoft.com/v1alpha1
+kind: Configuration
+metadata:
+  name: my-config
+  namespace: default
+spec:
+  configData:
+    # The configuration data is a YAML file
+    data:
+      - key1: "value1"
+        key2: "value2"
+  storage:
+    # The configuration data is stored in a ConfigMap
+    configMapRef:
+      name: my-config
+    redis:
+      # The configuration data is stored in a Redis database
+      host: redis
+      port: 6379
+      password: my-password
+      username: my-username
+      tls:
+        enabled: true
+        caCertificate: '-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0V8L6u/E9A7wZ3Fqlz4Vw0fU8Qz6KPZ8iDknT6R4y53HpuO6hcU1W0lpuBkA6T49sT0nkOJ/ywGzj+GoEnz94ZT9lKh7kOKOotO9Lkq+5h0PC1T/LT7PY3/kNs4ezEabGiVweU+RlwFYcfZ7EvDgSENd4bFpyvVRgEkGV9o6sMQuOp8Lz5Iug5Xy9W6Q9+91jKYfqf2nxd6u7C6y7dNEpJ3CeCqjG0rF/SVo+9JguE5db/2a8Vcf9Es2NhXGt2Xtztgj7UEzRZaH3KDhOWuPFX2XUvhSKLepNQZCz5GRcVHGh6C/ZF+Vxs1fNlaxZr/DSR6dzMSOxczjTr1LyzwgwQIDAQAB-----END PUBLIC KEY-----'
