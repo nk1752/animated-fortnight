@@ -10,8 +10,7 @@ def build_config():
 
 
     with open("certificate.pem", "r") as f:
-        pem_encoded = f.read()
-    pem_decoded = base64.b64decode(pem_encoded).decode("utf-8").replace("\r", "")
+        pem_decoded = f.read()
 
     config = {
         "bg_name": "test",
