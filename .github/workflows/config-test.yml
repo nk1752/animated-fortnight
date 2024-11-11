@@ -30,7 +30,7 @@ jobs:
           BG_NAME: "BP"
         id: config
         run: |
-          python ${{ GITHUB.WORKSPACE }}/scripts/config-test.py
+          python ${{ GITHUB.WORKSPACE }}/scripts/config_test.py
           ls -l
 
       - name: verify config.yaml
