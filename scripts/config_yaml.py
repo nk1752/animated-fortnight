@@ -12,9 +12,11 @@ def build_config():
     with open("certificate.pem", "r") as f:
         pem_decoded = f.read()
 
+    cert = pem_decoded.replace("\r", "")
+
     config = {
         "bg_name": "test",
-        "crt": pem_decoded,
+        "crt": cert,
     }
     print(config)
 
