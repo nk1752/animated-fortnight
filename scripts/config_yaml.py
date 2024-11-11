@@ -21,7 +21,7 @@ def build_config():
     print(config)
 
     with open("config.yaml", "w") as f:
-        yaml.dump(config, f, default_flow_style=False)
+        yaml.dump(config, f, default_flow_style=False, allow_unicode=True)
 
 
 if __name__ == "__main__":
